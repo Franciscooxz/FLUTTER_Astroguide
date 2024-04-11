@@ -113,7 +113,7 @@ class _QuizListPageState extends State<QuizListPage> {
 class QuizDetailPage extends StatefulWidget {
   final dynamic quiz;
 
-  const QuizDetailPage({Key? key, required this.quiz}) : super(key: key);
+  const QuizDetailPage({super.key, required this.quiz});
 
   @override
   _QuizDetailPageState createState() => _QuizDetailPageState(quiz);

@@ -41,8 +41,8 @@ ThemeData lightMode = ThemeData(
       backgroundColor: MaterialStateProperty.all<Color>(
         lightColorScheme.primary,
       ),
-      foregroundColor:
-          MaterialStateProperty.all<Color>(Color.fromARGB(255, 255, 253, 253)),
+      foregroundColor: MaterialStateProperty.all<Color>(
+          const Color.fromARGB(255, 255, 253, 253)),
       elevation: MaterialStateProperty.all<double>(5.0),
       padding: MaterialStateProperty.all<EdgeInsets>(
           const EdgeInsets.symmetric(horizontal: 20, vertical: 18)),

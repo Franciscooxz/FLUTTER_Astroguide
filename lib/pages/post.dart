@@ -1,15 +1,11 @@
 import 'package:astroguide_flutter/controllers/category_controller.dart';
-import 'package:astroguide_flutter/theme/theme.dart';
+import 'package:astroguide_flutter/models/category_model.dart';
 import 'package:astroguide_flutter/utils/screen_size.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'widgets/post_field.dart';
 import 'widgets/post_data.dart';
 import 'package:astroguide_flutter/controllers/post_controller.dart';
-import 'package:astroguide_flutter/pages/menu.dart';
-import 'package:astroguide_flutter/controllers/authentication.dart';
-import 'package:astroguide_flutter/models/post_model.dart';
-import 'package:astroguide_flutter/pages/widgets/input_widget.dart';
 
 class PostPage extends StatefulWidget {
   const PostPage({super.key});
@@ -21,6 +17,13 @@ class PostPage extends StatefulWidget {
 class _PostPageState extends State<PostPage> {
   final PostController _postController = Get.put(PostController());
   final TextEditingController _textController = TextEditingController();
+  final List<CategoryModel> categoryList = [
+    CategoryModel(id: 1, name: 'Sin Categoria'),
+    CategoryModel(id: 2, name: 'Estrellas'),
+    CategoryModel(id: 3, name: 'Lunas'),
+    CategoryModel(id: 4, name: 'Planetas'),
+  ];
+  CategoryModel? selectedCategory;
 
   void showCreatePostDialog() {
     showDialog(
@@ -45,7 +48,7 @@ class _PostPageState extends State<PostPage> {
                 shape: ContinuousRectangleBorder(
                   borderRadius: BorderRadius.circular(25),
                 ),
-                backgroundColor: Color.fromARGB(255, 2, 40, 255),
+                backgroundColor: const Color.fromARGB(255, 2, 40, 255),
                 elevation: 10,
                 padding: const EdgeInsets.symmetric(
                   horizontal: 60,
@@ -54,9 +57,8 @@ class _PostPageState extends State<PostPage> {
               ),
               onPressed: () async {
                 await _postController.createPost(
-                  content: _textController.text.trim(),
-                  category_id: 0, //TODO DINAMICO
-                );
+                    content: _textController.text.trim(),
+                    categoryId: selectedCategory!.id);
                 _textController.clear();
                 _postController.getAllPosts();
               },
@@ -88,7 +90,12 @@ class _PostPageState extends State<PostPage> {
         centerTitle: true,
       ),
       floatingActionButton: FilledButton(
-          onPressed: () => showCreatePostDialog(), child: Text('Publicar')),
+          onPressed: () {
+            if (selectedCategory == null) return;
+
+            showCreatePostDialog();
+          },
+          child: const Text('Publicar')),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -117,7 +124,7 @@ class _PostPageState extends State<PostPage> {
                 const SizedBox(
                   height: 30,
                 ),
-                Text('Publicaciones'),
+                const Text('Publicaciones'),
                 const SizedBox(
                   height: 20,
                 ),
@@ -170,7 +177,7 @@ class _PostPageState extends State<PostPage> {
           isDense: true,
           isExpanded: true,
           menuMaxHeight: ScreenSize.height * 0.4,
-          value: null,
+          value: selectedCategory?.id.toString(),
           icon: const Icon(
             Icons.arrow_drop_down,
             color: Colors.black,
@@ -184,13 +191,17 @@ class _PostPageState extends State<PostPage> {
           underline: null,
           hint: const Text("Seleccione Categoria"),
           onChanged: (newValue) {
-            //id_categoria = newValue!; // Actualiza la variable con la nueva categoría seleccionada
-            // Actualiza la variable con la nueva categoría seleccionada
+            setState(() {});
             //TODO TERMINAR
-            //Variable que reciba este valor
-            print(newValue);
+            if (newValue == null) return;
+            selectedCategory = categoryList
+                .where(
+                  (category) => category.id == int.parse(newValue),
+                )
+                .first;
+            debugPrint('$newValue');
           },
-          items: categoryController.categories.value
+          items: categoryList //categoryController.categories.value
               .map<DropdownMenuItem<String>>(
                   (category) => DropdownMenuItem<String>(
                         value: category.id.toString(),

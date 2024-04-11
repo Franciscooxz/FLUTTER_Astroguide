@@ -1,4 +1,3 @@
-import 'package:astroguide_flutter/main.dart';
 import 'package:astroguide_flutter/pages/logros.dart';
 import 'package:astroguide_flutter/pages/post.dart';
 
@@ -17,7 +16,7 @@ void main() {
 }
 
 class Menu extends StatelessWidget {
-  const Menu({Key? key});
+  const Menu({super.key});
 
   @override
   Widget build(BuildContext context) {

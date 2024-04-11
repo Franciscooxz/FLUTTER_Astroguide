@@ -28,7 +28,7 @@ class QuizService {
   }
 
   static Future<bool> saveQuiz(String token, Map<String, dynamic> data) async {
-    final url =
+    const url =
         'https://astroguide.api.adsocidm.com/api/quiz/validarTerminacion';
     var headers = {
       'Content-Type': 'application/json',

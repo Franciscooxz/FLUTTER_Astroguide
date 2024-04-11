@@ -47,13 +47,13 @@ class PostController extends GetxController {
 
   Future createPost({
     required String content,
-    required int category_id,
+    required int categoryId,
   }) async {
     try {
-      //TODO AGREGAR EL CAMPO AL MODELO
+      //TODO: AGREGAR EL CAMPO AL MODELO
       var data = {
         'content': content,
-        //'category_id': category_id,
+        'category_id': categoryId,
       };
 
       var response = await http.post(
