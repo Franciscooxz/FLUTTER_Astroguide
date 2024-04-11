@@ -1,13 +1,13 @@
-com.example.astroguide_flutter.app-jetified-annotation-experimental-1.1.0-0 C:\Users\franc\.gradle\caches\transforms-3\09db32a73384ac2dccccf916d7dc0262\transformed\jetified-annotation-experimental-1.1.0\res
-com.example.astroguide_flutter.app-core-1.6.0-1 C:\Users\franc\.gradle\caches\transforms-3\168e459aae59caaab0d2c703cf9d67ab\transformed\core-1.6.0\res
-com.example.astroguide_flutter.app-jetified-window-1.0.0-beta04-2 C:\Users\franc\.gradle\caches\transforms-3\29fe38a5fd6c3bf46cd8e59c2b63489e\transformed\jetified-window-1.0.0-beta04\res
-com.example.astroguide_flutter.app-jetified-window-java-1.0.0-beta04-3 C:\Users\franc\.gradle\caches\transforms-3\978180320ed1d29d66a82edc9d24751e\transformed\jetified-window-java-1.0.0-beta04\res
-com.example.astroguide_flutter.app-debug-4 C:\Users\franc\Desktop\FLUTTER_Astroguide\FLUTTER_Astroguide\android\app\src\debug\res
-com.example.astroguide_flutter.app-main-5 C:\Users\franc\Desktop\FLUTTER_Astroguide\FLUTTER_Astroguide\android\app\src\main\res
-com.example.astroguide_flutter.app-pngs-6 C:\Users\franc\Desktop\FLUTTER_Astroguide\FLUTTER_Astroguide\build\app\generated\res\pngs\debug
-com.example.astroguide_flutter.app-resValues-7 C:\Users\franc\Desktop\FLUTTER_Astroguide\FLUTTER_Astroguide\build\app\generated\res\resValues\debug
-com.example.astroguide_flutter.app-rs-8 C:\Users\franc\Desktop\FLUTTER_Astroguide\FLUTTER_Astroguide\build\app\generated\res\rs\debug
-com.example.astroguide_flutter.app-mergeDebugResources-9 C:\Users\franc\Desktop\FLUTTER_Astroguide\FLUTTER_Astroguide\build\app\intermediates\incremental\debug\mergeDebugResources\merged.dir
-com.example.astroguide_flutter.app-mergeDebugResources-10 C:\Users\franc\Desktop\FLUTTER_Astroguide\FLUTTER_Astroguide\build\app\intermediates\incremental\debug\mergeDebugResources\stripped.dir
-com.example.astroguide_flutter.app-merged_res-11 C:\Users\franc\Desktop\FLUTTER_Astroguide\FLUTTER_Astroguide\build\app\intermediates\merged_res\debug
-com.example.astroguide_flutter.app-packaged_res-12 C:\Users\franc\Desktop\FLUTTER_Astroguide\FLUTTER_Astroguide\build\path_provider_android\intermediates\packaged_res\debug
+com.example.astroguide_flutter.app-jetified-annotation-experimental-1.1.0-0 C:\Users\Camil\.gradle\caches\transforms-3\09db32a73384ac2dccccf916d7dc0262\transformed\jetified-annotation-experimental-1.1.0\res
+com.example.astroguide_flutter.app-core-1.6.0-1 C:\Users\Camil\.gradle\caches\transforms-3\168e459aae59caaab0d2c703cf9d67ab\transformed\core-1.6.0\res
+com.example.astroguide_flutter.app-jetified-window-1.0.0-beta04-2 C:\Users\Camil\.gradle\caches\transforms-3\29fe38a5fd6c3bf46cd8e59c2b63489e\transformed\jetified-window-1.0.0-beta04\res
+com.example.astroguide_flutter.app-jetified-window-java-1.0.0-beta04-3 C:\Users\Camil\.gradle\caches\transforms-3\978180320ed1d29d66a82edc9d24751e\transformed\jetified-window-java-1.0.0-beta04\res
+com.example.astroguide_flutter.app-debug-4 C:\Users\Camil\Desktop\Proyectos Desarrollo\Flutter\AstroGays\FLUTTER_Astroguide\android\app\src\debug\res
+com.example.astroguide_flutter.app-main-5 C:\Users\Camil\Desktop\Proyectos Desarrollo\Flutter\AstroGays\FLUTTER_Astroguide\android\app\src\main\res
+com.example.astroguide_flutter.app-pngs-6 C:\Users\Camil\Desktop\Proyectos Desarrollo\Flutter\AstroGays\FLUTTER_Astroguide\build\app\generated\res\pngs\debug
+com.example.astroguide_flutter.app-resValues-7 C:\Users\Camil\Desktop\Proyectos Desarrollo\Flutter\AstroGays\FLUTTER_Astroguide\build\app\generated\res\resValues\debug
+com.example.astroguide_flutter.app-rs-8 C:\Users\Camil\Desktop\Proyectos Desarrollo\Flutter\AstroGays\FLUTTER_Astroguide\build\app\generated\res\rs\debug
+com.example.astroguide_flutter.app-mergeDebugResources-9 C:\Users\Camil\Desktop\Proyectos Desarrollo\Flutter\AstroGays\FLUTTER_Astroguide\build\app\intermediates\incremental\debug\mergeDebugResources\merged.dir
+com.example.astroguide_flutter.app-mergeDebugResources-10 C:\Users\Camil\Desktop\Proyectos Desarrollo\Flutter\AstroGays\FLUTTER_Astroguide\build\app\intermediates\incremental\debug\mergeDebugResources\stripped.dir
+com.example.astroguide_flutter.app-merged_res-11 C:\Users\Camil\Desktop\Proyectos Desarrollo\Flutter\AstroGays\FLUTTER_Astroguide\build\app\intermediates\merged_res\debug
+com.example.astroguide_flutter.app-packaged_res-12 C:\Users\Camil\Desktop\Proyectos Desarrollo\Flutter\AstroGays\FLUTTER_Astroguide\build\path_provider_android\intermediates\packaged_res\debug
