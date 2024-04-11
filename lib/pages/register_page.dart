@@ -2,13 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:astroguide_flutter/controllers/authentication.dart';
 import 'package:astroguide_flutter/pages/login_page.dart';
 import 'package:get/get.dart';
-import './widgets/input_widget.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:astroguide_flutter/theme/theme.dart';
 import 'package:astroguide_flutter/pages/widgets/custom_scaffold.dart';
 
 class RegisterPage extends StatefulWidget {
-  const RegisterPage({Key? key}) : super(key: key);
+  const RegisterPage({super.key});
 
   @override
   State<RegisterPage> createState() => _RegisterPageState();

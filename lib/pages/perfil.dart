@@ -69,6 +69,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        shape: ContinuousRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        backgroundColor: const Color.fromARGB(255, 2, 40, 255),
+                      ),
                       onPressed: () async {
                         Navigator.push(
                           context,
@@ -76,7 +82,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               builder: (context) => EditarPerfil()),
                         );
                       },
-                      child: const Text('Editar Perfil'),
+                      child: const Text(
+                        'Editar Perfil',
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                   ),
                   const SizedBox(

@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'package:astroguide_flutter/models/comment_model.dart';
 import 'package:astroguide_flutter/pages/perfil.dart';
 import 'package:http/http.dart' as http;
 

@@ -73,8 +73,17 @@ class _EditarPerfilState extends State<EditarPerfil> {
             _buildTextField("Correo electrónico", _emailController),
             SizedBox(height: 20.0),
             ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                shape: ContinuousRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                backgroundColor: const Color.fromARGB(255, 2, 40, 255),
+              ),
               onPressed: _actualizarUsuario,
-              child: Text('Guardar Cambios'),
+              child: Text(
+                'Guardar Cambios',
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           ],
         ),
