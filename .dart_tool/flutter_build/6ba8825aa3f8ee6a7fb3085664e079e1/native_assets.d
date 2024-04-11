@@ -1,0 +1,1 @@
+ C:\\Users\\SENA\\Desktop\\Dios\ iluminame\ o\ eliminame\\FLUTTER_Astroguide\\FLUTTER_Astroguide\\.dart_tool\\flutter_build\\6ba8825aa3f8ee6a7fb3085664e079e1\\native_assets.yaml: 
