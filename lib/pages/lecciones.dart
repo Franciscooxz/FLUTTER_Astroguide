@@ -81,7 +81,7 @@ class _LeccionesListState extends State<LeccionesList> {
 
           return GestureDetector(
             onTap: () {
-              if (desbloqueada || index == 0) {
+              if (desbloqueada) {
                 Navigator.push(
                   context,
                   MaterialPageRoute(

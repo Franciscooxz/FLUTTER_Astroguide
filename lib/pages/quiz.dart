@@ -44,7 +44,8 @@ class _QuizListPageState extends State<QuizListPage> {
         itemCount: quizzes.length,
         itemBuilder: (context, index) {
           final quiz = quizzes[index];
-          final bool bloqueada = quiz["bloqueada"] == 0 ? false : true;
+          final bool bloqueada = quiz["bloqueada"];
+
           print(bloqueada);
           return GestureDetector(
             onTap: () {
@@ -173,8 +174,15 @@ class _QuizDetailPageState extends State<QuizDetailPage> {
         ]
       };
       final resposnse = await QuizService.saveQuiz(token, data);
+      print(resposnse.toString());
       // Verificar si todas las respuestas son correctas
-      if (resposnse) {
+      if (resposnse == "Ultima leccion") {
+        // Navegar a la página de aprobación
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => QuizPassedPage()),
+        );
+      } else if (resposnse) {
         /*if (selectedAnswer1 == widget.quiz['RespuestaCorrecta'] &&
             selectedAnswer2 == widget.quiz['RespuestaCorrecta2'] &&
             selectedAnswer3 == widget.quiz['RespuestaCorrecta3']) {*/

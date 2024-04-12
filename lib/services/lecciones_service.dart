@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 
 class LeccionesService {
   static Future<List<dynamic>> obtenerLecciones(String token) async {
-    final url = 'https://astroguide.api.adsocidm.com/api/lecciones';
+    final url = 'http://10.0.2.2:8000/api/lecciones';
     var headers = {
       'Content-Type': 'application/json',
       'authorization': 'Bearer $token'
@@ -30,7 +30,7 @@ class LeccionesService {
   }
 
   static Future<String> desbloquearQuiz(String token, int id) async {
-    final url = 'https://astroguide.api.adsocidm.com/api/desbloquearquiz/$id';
+    final url = 'http://10.0.2.2:8000/api/desbloquearquiz/$id';
     var headers = {
       'Content-Type': 'application/json',
       'authorization': 'Bearer $token'

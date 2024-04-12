@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 
 class UserService {
   static Future<UserData> obtenerUsuarios(String token) async {
-    final url = 'https://astroguide.api.adsocidm.com/api/get/user';
+    final url = 'http://10.0.2.2:8000/api/get/user';
     var headers = {
       'Content-Type': 'application/json',
       'authorization': 'Bearer $token'
