@@ -1,5 +1,5 @@
-import 'package:astroguide_flutter/controllers/category_controller.dart';
 import 'package:astroguide_flutter/models/category_model.dart';
+import 'package:astroguide_flutter/models/post_model.dart';
 import 'package:astroguide_flutter/utils/screen_size.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -23,7 +23,42 @@ class _PostPageState extends State<PostPage> {
     CategoryModel(id: 3, name: 'Lunas'),
     CategoryModel(id: 4, name: 'Planetas'),
   ];
+  final List<PostModel> postList = [
+    PostModel(content: 'kasdkaskskad', categoryId: 1),
+    PostModel(content: 'kasdkaskskad', categoryId: 1),
+    PostModel(content: 'kasdkaskskad', categoryId: 1),
+    PostModel(content: 'kasdkaskskad', categoryId: 2),
+    PostModel(content: 'kasdkaskskad', categoryId: 2),
+    PostModel(content: 'kasdkaskskad', categoryId: 3),
+    PostModel(content: 'kasdkaskskad', categoryId: 4),
+    PostModel(content: 'kasdkaskskad', categoryId: 4),
+  ];
+
   CategoryModel? selectedCategory;
+  List<PostModel> filteredPosts = [];
+
+  void _filterPostsByCategory() {
+    if (selectedCategory == null) return;
+    setState(() {
+      filteredPosts.clear();
+      //TODO DESCOMENTAR
+      /*filteredPosts = [
+        ..._postController.posts.value
+            .where((post) => post.categoryId == selectedCategory!.id)
+      ];*/
+      filteredPosts = [
+        ...postList.where((post) => post.categoryId == selectedCategory!.id)
+      ];
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    //TODO RESTAURAR EN PRODUCCION
+    //filteredPosts = [..._postController.posts.value];
+    filteredPosts = [...postList];
+  }
 
   void showCreatePostDialog() {
     showDialog(
@@ -129,7 +164,7 @@ class _PostPageState extends State<PostPage> {
                   height: 20,
                 ),
                 Obx(() {
-                  print(_postController.posts);
+                  //print(_postController.posts);
                   return _postController.isLoading.value
                       ? const Center(
                           child: CircularProgressIndicator(),
@@ -137,13 +172,13 @@ class _PostPageState extends State<PostPage> {
                       : ListView.builder(
                           shrinkWrap: true,
                           physics: const NeverScrollableScrollPhysics(),
-                          itemCount: _postController.posts.value.length,
+                          itemCount: filteredPosts.length,
                           itemBuilder: (context, index) {
                             return Padding(
                               padding:
                                   const EdgeInsets.symmetric(vertical: 8.0),
                               child: PostData(
-                                post: _postController.posts.value[index],
+                                post: filteredPosts[index],
                               ),
                             );
                           },
@@ -158,7 +193,6 @@ class _PostPageState extends State<PostPage> {
   }
 
   Container _buildStateDropdown() {
-    final categoryController = Get.put(CategoryController());
     return Container(
       padding: EdgeInsets.symmetric(
         vertical: ScreenSize.height * 0.012,
@@ -199,7 +233,8 @@ class _PostPageState extends State<PostPage> {
                   (category) => category.id == int.parse(newValue),
                 )
                 .first;
-            debugPrint('$newValue');
+            debugPrint('Category ID: $newValue');
+            _filterPostsByCategory();
           },
           items: categoryList //categoryController.categories.value
               .map<DropdownMenuItem<String>>(

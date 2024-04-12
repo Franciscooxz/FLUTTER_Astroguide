@@ -34,11 +34,11 @@ class _PostDataState extends State<PostData> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            widget.post.user!.name!,
+            widget.post.user?.name ?? 'Anonimo',
             style: GoogleFonts.poppins(),
           ),
           Text(
-            widget.post.user!.email!,
+            widget.post.user?.email ?? 'anonimus@....',
             style: GoogleFonts.poppins(
               fontSize: 10,
             ),
@@ -58,7 +58,8 @@ class _PostDataState extends State<PostData> {
                 },
                 icon: Icon(
                   Icons.thumb_up,
-                  color: widget.post.liked! ? Colors.blue : Colors.black,
+                  color:
+                      widget.post.liked ?? false ? Colors.blue : Colors.black,
                 ),
               ),
               IconButton(

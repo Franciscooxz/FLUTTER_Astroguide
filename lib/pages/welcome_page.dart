@@ -5,9 +5,6 @@ import 'package:astroguide_flutter/utils/screen_size.dart';
 import 'package:flutter/material.dart';
 import 'package:astroguide_flutter/pages/login_page.dart';
 import 'package:astroguide_flutter/pages/register_page.dart';
-import 'package:astroguide_flutter/theme/theme.dart';
-import 'package:astroguide_flutter/pages/widgets/custom_scaffold.dart';
-import 'package:astroguide_flutter/pages/widgets/welcome_button.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});

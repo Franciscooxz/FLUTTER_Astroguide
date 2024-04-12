@@ -1,14 +1,17 @@
 import 'package:astroguide_flutter/pages/menu.dart';
+
 import 'package:flutter/material.dart';
 import 'package:astroguide_flutter/services/user_service.dart';
 import 'package:get_storage/get_storage.dart';
 
 class EditarPerfil extends StatefulWidget {
+  const EditarPerfil({super.key});
+
   @override
-  _EditarPerfilState createState() => _EditarPerfilState();
+  EditarPerfilState createState() => EditarPerfilState();
 }
 
-class _EditarPerfilState extends State<EditarPerfil> {
+class EditarPerfilState extends State<EditarPerfil> {
   late TextEditingController _nameController;
   late TextEditingController _usernameController;
   late TextEditingController _emailController;
@@ -37,7 +40,7 @@ class _EditarPerfilState extends State<EditarPerfil> {
     });
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => Menu()),
+      MaterialPageRoute(builder: (context) => const Menu()),
     );
   }
 
@@ -61,20 +64,20 @@ class _EditarPerfilState extends State<EditarPerfil> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Editar Perfil'),
+        title: const Text('Editar Perfil'),
       ),
       body: Padding(
-        padding: EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             _buildTextField("Nombre", _nameController),
             _buildTextField("Nombre de usuario", _usernameController),
             _buildTextField("Correo electrónico", _emailController),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
             ElevatedButton(
               onPressed: _actualizarUsuario,
-              child: Text('Guardar Cambios'),
+              child: const Text('Guardar Cambios'),
             ),
           ],
         ),
@@ -86,15 +89,16 @@ class _EditarPerfilState extends State<EditarPerfil> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(label, style: TextStyle(color: Color.fromARGB(255, 22, 22, 22))),
+        Text(label,
+            style: const TextStyle(color: Color.fromARGB(255, 22, 22, 22))),
         TextField(
           controller: controller,
-          style: TextStyle(color: const Color.fromARGB(255, 133, 122, 122)),
-          decoration: InputDecoration(
+          style: const TextStyle(color: Color.fromARGB(255, 133, 122, 122)),
+          decoration: const InputDecoration(
             border: OutlineInputBorder(),
           ),
         ),
-        SizedBox(height: 10.0),
+        const SizedBox(height: 10.0),
       ],
     );
   }

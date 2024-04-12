@@ -1,12 +1,23 @@
 import 'package:astroguide_flutter/pages/menu.dart';
+import 'package:astroguide_flutter/pages/providers/profile_provider.dart';
 import 'package:astroguide_flutter/pages/welcome_page.dart';
 import 'package:astroguide_flutter/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => ProfileProvider(),
+        )
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -17,6 +28,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final box = GetStorage();
     final token = box.read('token');
+
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'AstroGuide',

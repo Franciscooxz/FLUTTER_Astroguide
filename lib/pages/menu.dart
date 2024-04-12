@@ -1,5 +1,6 @@
 import 'package:astroguide_flutter/pages/logros.dart';
 import 'package:astroguide_flutter/pages/post.dart';
+import 'package:astroguide_flutter/pages/providers/profile_provider.dart';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +9,7 @@ import 'package:astroguide_flutter/pages/lecciones.dart'; // Importa la página 
 import "package:astroguide_flutter/pages/perfil.dart"; // Importa la página de perfil
 import 'package:astroguide_flutter/pages/quiz.dart'; // Importa la página de quizzes
 import 'package:astroguide_flutter/controllers/authentication.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
@@ -32,7 +34,7 @@ class Menu extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key});
+  const MyHomePage({super.key});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -40,6 +42,13 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final AuthenticationController _authController = AuthenticationController();
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      context.read<ProfileProvider>().initImageConfig();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             .headline6
                             ?.copyWith(color: Colors.white),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       IconButton(
                         icon: Icon(Icons.exit_to_app),
                         onPressed: () {

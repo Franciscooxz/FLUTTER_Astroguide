@@ -17,6 +17,7 @@ class PostModel {
     this.updatedAt,
     this.liked,
     this.user,
+    required this.categoryId,
   });
 
   int? id;
@@ -26,6 +27,7 @@ class PostModel {
   DateTime? updatedAt;
   bool? liked;
   User? user;
+  int categoryId;
 
   factory PostModel.fromJson(Map<String, dynamic> json) => PostModel(
         id: json["id"],
@@ -34,10 +36,9 @@ class PostModel {
         createdAt: DateTime.parse(json["created_at"]),
         updatedAt: DateTime.parse(json["updated_at"]),
         liked: json["liked"],
+        categoryId: json["category_id"],
         user: User.fromJson(json["user"]),
       );
-
-  get categoryId => null;
 
   Map<String, dynamic> toJson() => {
         "id": id,
@@ -46,6 +47,7 @@ class PostModel {
         "created_at": createdAt!.toIso8601String(),
         "updated_at": updatedAt!.toIso8601String(),
         "liked": liked,
+        "category_id": categoryId,
         "user": user!.toJson(),
       };
 }
