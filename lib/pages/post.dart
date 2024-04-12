@@ -1,11 +1,11 @@
 import 'package:astroguide_flutter/controllers/category_controller.dart';
+import 'package:astroguide_flutter/controllers/post_controller.dart';
 import 'package:astroguide_flutter/models/category_model.dart';
 import 'package:astroguide_flutter/utils/screen_size.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'widgets/post_field.dart';
 import 'widgets/post_data.dart';
-import 'package:astroguide_flutter/controllers/post_controller.dart';
 
 class PostPage extends StatefulWidget {
   const PostPage({super.key});
@@ -24,6 +24,13 @@ class _PostPageState extends State<PostPage> {
     CategoryModel(id: 4, name: 'Planetas'),
   ];
   CategoryModel? selectedCategory;
+
+  void _filterPostsByCategory(CategoryModel category) {
+    setState(() {
+      _postController.posts.value
+          .retainWhere((post) => post.categoryId == category.id);
+    });
+  }
 
   void showCreatePostDialog() {
     showDialog(
@@ -75,6 +82,14 @@ class _PostPageState extends State<PostPage> {
         ),
       ),
     );
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    if (selectedCategory != null) {
+      _filterPostsByCategory(selectedCategory!);
+    }
   }
 
   @override
