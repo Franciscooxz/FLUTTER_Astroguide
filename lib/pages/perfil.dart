@@ -74,21 +74,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   avatars: AppAssets.avatarList,
                 ),
                 Text(
-                  usuario!.email,
-                  style: const TextStyle(fontSize: 20.0),
-                ),
-                SizedBox(
-                  height: ScreenSize.absoluteHeight * 0.05,
+                  'Nombre: ${usuario?.name}',
+                  style: const TextStyle(fontSize: 25.0),
                 ),
                 Text(
-                  'Nombre: ${usuario.name}',
+                  'Usuario: ${usuario?.username}',
                   style: const TextStyle(fontSize: 20.0),
                 ),
                 const SizedBox(height: 10.0),
-                Text(
-                  'Usuario: ${usuario.username}',
-                  style: const TextStyle(fontSize: 20.0),
-                ),
                 logros.isNotEmpty
                     ? Padding(
                         padding: const EdgeInsets.all(8.0),
@@ -103,7 +96,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   child: Chip(
                                     avatar: const Icon(Icons.star),
                                     backgroundColor:
-                                        Colors.amber.withOpacity(0.8),
+                                        const Color.fromARGB(255, 199, 199, 198)
+                                            .withOpacity(0.8),
                                     label: Text(
                                       logros[index]['Nombre_del_Logro'],
                                     ),
@@ -119,8 +113,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   children: [
                     ElevatedButton(
                       style: ButtonStyle(
-                        backgroundColor:
-                            const MaterialStatePropertyAll(Colors.deepPurple),
+                        backgroundColor: const MaterialStatePropertyAll(
+                            Color.fromARGB(255, 36, 0, 241)),
                         padding: MaterialStatePropertyAll(
                           EdgeInsets.symmetric(
                             horizontal: ScreenSize.width * 0.215,
@@ -155,8 +149,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             vertical: ScreenSize.absoluteHeight * 0.015,
                           ),
                         ),
-                        backgroundColor:
-                            const MaterialStatePropertyAll(Colors.deepPurple),
+                        backgroundColor: const MaterialStatePropertyAll(
+                            Color.fromARGB(255, 226, 0, 0)),
                       ),
                       onPressed: () {
                         _authController.logout();

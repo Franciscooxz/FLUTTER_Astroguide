@@ -99,7 +99,7 @@ class EditarPerfilState extends State<EditarPerfil> {
             style: const TextStyle(color: Color.fromARGB(255, 22, 22, 22))),
         TextField(
           controller: controller,
-          style: const TextStyle(color: Color.fromARGB(255, 133, 122, 122)),
+          style: const TextStyle(color: Color.fromARGB(255, 145, 145, 145)),
           decoration: const InputDecoration(
             border: OutlineInputBorder(),
           ),

@@ -23,7 +23,7 @@ class _PostPageState extends State<PostPage> {
     CategoryModel(id: 3, name: 'Lunas'),
     CategoryModel(id: 4, name: 'Planetas'),
   ];
-  final List<PostModel> postList = [
+  /*final List<PostModel> postList = [
     PostModel(content: 'kasdkaskskad', categoryId: 1),
     PostModel(content: 'kasdkaskskad', categoryId: 1),
     PostModel(content: 'kasdkaskskad', categoryId: 1),
@@ -32,7 +32,7 @@ class _PostPageState extends State<PostPage> {
     PostModel(content: 'kasdkaskskad', categoryId: 3),
     PostModel(content: 'kasdkaskskad', categoryId: 4),
     PostModel(content: 'kasdkaskskad', categoryId: 4),
-  ];
+  ];*/
 
   CategoryModel? selectedCategory;
   List<PostModel> filteredPosts = [];
@@ -42,13 +42,13 @@ class _PostPageState extends State<PostPage> {
     setState(() {
       filteredPosts.clear();
       //TODO DESCOMENTAR
-      /*filteredPosts = [
+      filteredPosts = [
         ..._postController.posts.value
             .where((post) => post.categoryId == selectedCategory!.id)
-      ];*/
-      filteredPosts = [
-        ...postList.where((post) => post.categoryId == selectedCategory!.id)
       ];
+      /*filteredPosts = [
+        ...postList.where((post) => post.categoryId == selectedCategory!.id)
+      ];*/
     });
   }
 
@@ -56,8 +56,8 @@ class _PostPageState extends State<PostPage> {
   void initState() {
     super.initState();
     //TODO RESTAURAR EN PRODUCCION
-    //filteredPosts = [..._postController.posts.value];
-    filteredPosts = [...postList];
+    filteredPosts = [..._postController.posts.value];
+    /*filteredPosts = [...postList];*/
   }
 
   void showCreatePostDialog() {
@@ -102,7 +102,8 @@ class _PostPageState extends State<PostPage> {
                     ? const CircularProgressIndicator()
                     : const Text(
                         'Publicar',
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(
+                            color: Color.fromARGB(255, 255, 253, 253)),
                       );
               }),
             ),

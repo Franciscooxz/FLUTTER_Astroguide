@@ -78,12 +78,6 @@ class _MyHomePageState extends State<MyHomePage> {
                             ?.copyWith(color: Colors.white),
                       ),
                       const Spacer(),
-                      IconButton(
-                        icon: Icon(Icons.exit_to_app),
-                        onPressed: () {
-                          _authController.logout();
-                        },
-                      ),
                     ],
                   ),
                   subtitle: Text('Bienvenido',
