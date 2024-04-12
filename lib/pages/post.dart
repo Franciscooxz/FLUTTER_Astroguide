@@ -1,3 +1,4 @@
+import 'package:astroguide_flutter/controllers/post_controller.dart';
 import 'package:astroguide_flutter/models/category_model.dart';
 import 'package:astroguide_flutter/models/post_model.dart';
 import 'package:astroguide_flutter/utils/screen_size.dart';
@@ -5,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'widgets/post_field.dart';
 import 'widgets/post_data.dart';
-import 'package:astroguide_flutter/controllers/post_controller.dart';
 
 class PostPage extends StatefulWidget {
   const PostPage({super.key});
