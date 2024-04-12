@@ -54,7 +54,9 @@ class _PostPageState extends State<PostPage> {
 
   @override
   void initState() {
+    
     super.initState();
+    _postController.getAllPosts();
     //TODO RESTAURAR EN PRODUCCION
     filteredPosts = [..._postController.posts.value];
     /*filteredPosts = [...postList];*/
@@ -165,7 +167,7 @@ class _PostPageState extends State<PostPage> {
                   height: 20,
                 ),
                 Obx(() {
-                  //print(_postController.posts);
+                  print(_postController.posts);
                   return _postController.isLoading.value
                       ? const Center(
                           child: CircularProgressIndicator(),

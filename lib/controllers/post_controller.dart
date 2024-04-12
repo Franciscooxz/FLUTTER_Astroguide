@@ -16,11 +16,12 @@ class PostController extends GetxController {
 
   @override
   void onInit() {
-    getAllPosts();
     super.onInit();
+    getAllPosts();
+    
   }
 
-  Future getAllPosts() async {
+   getAllPosts() async {
     try {
       posts.value.clear();
       isLoading.value = true;
@@ -50,19 +51,25 @@ class PostController extends GetxController {
     required int categoryId,
   }) async {
     try {
+       int user_id = box.read('user_id');
       //TODO: AGREGAR EL CAMPO AL MODELO
       var data = {
-        'content': content,
-        'category_id': categoryId,
+        "content": content,
+        "category_id":  categoryId,
+        "user_id": user_id,
       };
+
+      String token = box.read('token');
 
       var response = await http.post(
         Uri.parse('${url}feed/store'),
         headers: {
-          'Accept': 'application/json',
-          'Authorization': 'Bearer ${box.read('token')}',
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer $token',
+
         },
-        body: data,
+        
+        body: jsonEncode (data),
       );
 
       if (response.statusCode == 201) {

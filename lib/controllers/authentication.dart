@@ -90,6 +90,7 @@ class AuthenticationController extends GetxController {
         token.value = json.decode(response.body)['token'];
         box.write('token', token.value);
         Get.offAll(() => const Menu());
+        box.write('user_id', json.decode(response.body)['user']['id']);
       } else {
         isLoading.value = false;
         Get.snackbar(

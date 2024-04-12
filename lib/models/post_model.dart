@@ -31,7 +31,7 @@ class PostModel {
 
   factory PostModel.fromJson(Map<String, dynamic> json) => PostModel(
         id: json["id"],
-        userId: int.parse(json["user_id"]),
+        userId:json["user_id"], //int.parse(json["user_id"]),
         content: json["content"],
         createdAt: DateTime.parse(json["created_at"]),
         updatedAt: DateTime.parse(json["updated_at"]),
