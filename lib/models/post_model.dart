@@ -31,12 +31,12 @@ class PostModel {
 
   factory PostModel.fromJson(Map<String, dynamic> json) => PostModel(
         id: json["id"],
-        userId:json["user_id"], //int.parse(json["user_id"]),
+        userId: int.parse(json["user_id"]),
+        categoryId: int.parse(json["category_id"]),
         content: json["content"],
         createdAt: DateTime.parse(json["created_at"]),
         updatedAt: DateTime.parse(json["updated_at"]),
         liked: json["liked"],
-        categoryId: json["category_id"],
         user: User.fromJson(json["user"]),
       );
 

@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 
 class LogrosService {
   static Future<List<dynamic>> getLogros(String token) async {
-    final url = 'http://10.0.2.2:8000/api/logroUser';
+    final url = 'http://astroguide.api.adsocidm.com/api/logroUser';
     var headers = {
       'Content-Type': 'application/json',
       'authorization': 'Bearer $token'

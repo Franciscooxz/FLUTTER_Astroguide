@@ -54,7 +54,6 @@ class _PostPageState extends State<PostPage> {
 
   @override
   void initState() {
-    
     super.initState();
     _postController.getAllPosts();
     //TODO RESTAURAR EN PRODUCCION

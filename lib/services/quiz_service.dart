@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 
 class QuizService {
   static Future<List<dynamic>> getQuiz(String token) async {
-    final url = 'http://10.0.2.2:8000/api/quiz';
+    final url = 'http://astroguide.api.adsocidm.com/api/quiz';
     var headers = {
       'Content-Type': 'application/json',
       'authorization': 'Bearer $token'
@@ -29,7 +29,8 @@ class QuizService {
 
   static Future<dynamic> saveQuiz(
       String token, Map<String, dynamic> data) async {
-    const url = 'http://10.0.2.2:8000/api/quiz/validarTerminacion';
+    const url =
+        'http://astroguide.api.adsocidm.com/api/quiz/validarTerminacion';
     var headers = {
       'Content-Type': 'application/json',
       'authorization': 'Bearer $token'

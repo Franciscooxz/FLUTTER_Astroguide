@@ -32,8 +32,8 @@ class CommentModel {
 
   factory CommentModel.fromJson(Map<String, dynamic> json) => CommentModel(
         id: json["id"],
-        userId: json["user_id"], //int.tryParse(json["user_id"]),
-        feedId: json["feed_id"],//int.tryParse(json["feed_id"]),
+        userId: int.parse(json["user_id"]),
+        feedId: int.parse(json["feed_id"]),
         body: json["body"],
         createdAt: DateTime.parse(json["created_at"]),
         updatedAt: DateTime.parse(json["updated_at"]),
@@ -72,7 +72,7 @@ class Feed {
 
   factory Feed.fromJson(Map<String, dynamic> json) => Feed(
         id: json["id"],
-        userId:  json["user_id"],//int.tryParse(json["user_id"]),
+        userId: int.parse(json["user_id"]),
         content: json["content"],
         createdAt: DateTime.parse(json["created_at"]),
         updatedAt: DateTime.parse(json["updated_at"]),
